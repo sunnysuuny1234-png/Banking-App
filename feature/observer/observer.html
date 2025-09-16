@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer Pattern</title>
+    <link rel="stylesheet" href="observer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 Observer Pattern: Cosmic Banking 🌌</h1>
+        <p class="description">
+            Watch your balance update in real-time across different planets (subscribers).
+            The bank account (subject) broadcasts changes to all subscribed planets. 🌠
+        </p>
+
+        <div class="account-card">
+            <h2 class="account-title">💫 Stellar Bank Account 💫</h2>
+            <div class="balance-display">
+                <span class="currency">$</span><span id="balance">1000.00</span>
+            </div>
+            <div class="actions">
+                <input type="number" id="amount" placeholder="Enter amount">
+                <button id="depositBtn">Deposit 💰</button>
+                <button id="withdrawBtn">Withdraw 💸</button>
+            </div>
+        </div>
+
+        <div class="planets-container">
+            <div class="planet" id="earth">
+                <h3>🌎 Earth Terminal 🌎</h3>
+                <div class="planet-balance">Balance: <span class="display-balance">...</span></div>
+            </div>
+            <div class="planet" id="mars">
+                <h3>🔴 Mars Station 🔴</h3>
+                <div class="planet-balance">Balance: <span class="display-balance">...</span></div>
+            </div>
+            <div class="planet" id="jupiter">
+                <h3>🪐 Jupiter Vault 🪐</h3>
+                <div class="planet-balance">Balance: <span class="display-balance">...</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="observer.js"></script>
+</body>
+</html>
