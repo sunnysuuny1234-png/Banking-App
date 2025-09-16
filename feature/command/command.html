@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Pattern</title>
+    <link rel="stylesheet" href="command.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔮 Command Pattern: The Chrono-Bank 🔮</h1>
+        <p class="description">
+            Execute, undo, and redo banking actions! Each button represents a command object
+            that knows how to perform a specific action and how to reverse it.
+        </p>
+
+        <div class="bank-card">
+            <h2 class="card-title">✨ Account Manager ✨</h2>
+            <div class="balance-container">
+                <span class="currency-symbol">$</span><span id="balanceDisplay">1000.00</span>
+            </div>
+            <div class="action-buttons">
+                <input type="number" id="amountInput" placeholder="Enter amount..." value="100">
+                <button id="depositBtn" class="action-btn">Deposit ➡️</button>
+                <button id="withdrawBtn" class="action-btn">Withdraw ⬅️</button>
+            </div>
+            <div class="history-buttons">
+                <button id="undoBtn" class="history-btn" disabled>↩️ Undo</button>
+                <button id="redoBtn" class="history-btn" disabled>↪️ Redo</button>
+            </div>
+        </div>
+
+        <div class="log-panel">
+            <h2>📜 Command Log 📜</h2>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+    <script src="command.js"></script>
+</body>
+</html>

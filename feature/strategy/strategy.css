@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #4b6cb7, #182848);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --text-color: #e0e0ff;
+    --highlight-color: #89cff0; /* Light blue/cyan */
+    --accent-color: #ff69b4; /* Hot pink */
+    --button-bg: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    --button-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="%23ffffff" opacity="0.1"><circle cx="50" cy="50" r="1" /></svg>') repeat;
+    background-size: 20px 20px;
+    animation: flow 30s linear infinite;
+}
+
+@keyframes flow {
+    from { background-position: 0 0; }
+    to { background-position: 200px 200px; }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--highlight-color);
+    text-shadow: 0 0 10px var(--highlight-color), 0 0 20px rgba(137, 207, 240, 0.5);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+input[type="number"] {
+    width: 70%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.strategy-selector {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.strategy-selector p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background: var(--button-bg);
+    border-color: transparent;
+    box-shadow: var(--button-shadow);
+    color: white;
+    transform: translateY(-3px);
+}
+
+#processBtn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-image: var(--button-bg);
+    background-size: 200% auto;
+    color: white;
+    box-shadow: var(--button-shadow);
+    margin-bottom: 30px;
+}
+
+#processBtn:hover {
+    background-position: right center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.results {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+}
+
+.results h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #e6b3b3;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.result-row span:last-child {
+    font-weight: 700;
+    color: var(--highlight-color);
+}
+
+.total {
+    margin-top: 20px;
+    border-top: 1px dashed var(--card-border);
+    padding-top: 15px;
+}
+
+.total span:last-child {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}

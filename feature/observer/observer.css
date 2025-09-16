@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color-start: #000022;
+    --bg-color-end: #000044;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-color: #e0e0ff;
+    --highlight-color: #ff6ec7;
+    --deposit-btn-bg: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    --withdraw-btn-bg: linear-gradient(45deg, #ff416c, #ff4b2b);
+    --earth-color: #00b894;
+    --mars-color: #e17055;
+    --jupiter-color: #fdcb6e;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--bg-color-start), var(--bg-color-end));
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px) no-repeat;
+    background-size: 5px 5px;
+    animation: shooting-stars 20s linear infinite;
+}
+
+@keyframes shooting-stars {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 900px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--highlight-color);
+    text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.account-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.account-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.account-title {
+    color: #a29bfe;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.balance-display {
+    font-size: 3em;
+    font-weight: 700;
+    color: #74b9ff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.currency {
+    color: var(--highlight-color);
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+input[type="number"] {
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    outline: none;
+    width: 150px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 10px var(--highlight-color);
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-size: 200% auto;
+    color: white;
+}
+
+#depositBtn {
+    background-image: var(--deposit-btn-bg);
+}
+
+#withdrawBtn {
+    background-image: var(--withdraw-btn-bg);
+}
+
+button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-position: right center;
+}
+
+.planets-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.planet {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.planet h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#earth h3 { color: var(--earth-color); }
+#mars h3 { color: var(--mars-color); }
+#jupiter h3 { color: var(--jupiter-color); }
+
+.planet-balance {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: color 0.5s ease;
+}
+
+.planet-balance .display-balance {
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
